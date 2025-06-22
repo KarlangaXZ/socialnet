@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
+const auth = require("../middlewares/auth");
 
 // Registro
 router.post("/register", async (req, res) => {
@@ -27,6 +28,31 @@ router.post("/login", async (req, res) => {
     res.json({ token });
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+
+
+// Ver perfil
+router.get("/users/me", auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select("-password");
+    if (!user) return res.status(404).json({ msg: "User not found" });
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Editar perfil
+router.patch("/users/me", auth, async (req, res) => {
+  try {
+    const updates = req.body;
+    const user = await User.findByIdAndUpdate(req.user.id, updates, { new: true }).select("-password");
+    if (!user) return res.status(404).json({ msg: "User not found" });
+    res.json(user);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
   }
 });
 
