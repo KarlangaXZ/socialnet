@@ -41,3 +41,12 @@ describe("Auth API", () => {
     expect(res.body.token).toBeDefined();
   });
 });
+//test de registro
+
+//test de login
+
+//test de perfil
+
+//test de actualizacion de perfil
+
+//test de eliminacion de perfil
