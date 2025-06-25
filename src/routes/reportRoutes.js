@@ -3,6 +3,9 @@ const router = express.Router();
 const auth = require("../middlewares/auth");
 const isAdmin = require("../middlewares/isAdmin");
 const Report = require("../models/Report");
+const Post = require("../models/Post");
+const Comment = require("../models/Comment");
+const User = require("../models/User");
 
 // Reportar post, comentario o usuario
 router.post("/report/:type/:id", auth, async (req, res) => {
