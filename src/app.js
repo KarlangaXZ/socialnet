@@ -4,7 +4,9 @@ const userRoutes = require("./routes/userRoutes");
 const postRoutes = require("./routes/postRoutes");
 const postInteractions = require("./routes/postInteractions");
 const socialGraph = require("./routes/socialGraph");
-
+const adminRoutes = require("./routes/adminRoutes");
+const isAdmin = require("./middlewares/isAdmin");
+const reportRoutes = require("./routes/reportRoutes");
 const app = express();
 app.use(express.json());
 
@@ -22,6 +24,12 @@ app.use("/api", postInteractions);
 
 //social graph routes
 app.use("/api", socialGraph);
+
+//admin routes
+app.use("/api", isAdmin, adminRoutes);
+
+//report routes
+app.use("/api", reportRoutes);
 
 
 module.exports = app;

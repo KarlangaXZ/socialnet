@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
   followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
   comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
+  isAdmin: { type: Boolean, default: false },
   });
 
 userSchema.pre("save", async function () {
@@ -22,3 +23,12 @@ userSchema.methods.comparePassword = function (password) {
 };
 
 module.exports = mongoose.model("User", userSchema);
+
+
+
+
+
+
+
+
+
