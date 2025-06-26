@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SocialNet - Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style/main.css" />
+</head>
+<body class="bg-gray-100">
+
+  <div class="flex flex-col md:flex-row items-center justify-center min-h-screen px-4 md:px-16">
+    
+    <!-- Lado izquierdo -->
+    <div class="mb-10 md:mb-0 md:mr-12 text-center md:text-left">
+      <h1 class="text-4xl text-blue-600 font-bold mb-2">SocialNet</h1>
+      <p class="text-xl text-gray-700">Conéctate con tus amigos y el mundo que te rodea.</p>
+    </div>
+
+    <!-- Formulario -->
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md space-y-4">
+      <h2 class="text-2xl font-bold text-center" id="form-title">Iniciar Sesión</h2>
+
+      <form id="auth-form" class="space-y-3">
+        <input type="text" id="username" placeholder="Nombre de usuario" class="w-full p-2 border rounded hidden" />
+        <input type="email" id="email" placeholder="Correo electrónico" class="w-full p-2 border rounded" />
+        <input type="password" id="password" placeholder="Contraseña" class="w-full p-2 border rounded" />
+
+        <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded font-semibold hover:bg-blue-700">
+          Continuar
+        </button>
+      </form>
+
+      <p class="text-sm text-center">
+        <span id="toggle-text">¿No tienes cuenta?</span>
+        <button id="toggle-form" class="text-blue-600 hover:underline font-medium">Regístrate</button>
+      </p>
+
+      <p id="message" class="text-center text-sm text-red-600"></p>
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

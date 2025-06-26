@@ -1,0 +1,26 @@
+    
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #f0f2f5;
+  }
+  
+  textarea {
+    transition: border 0.2s ease-in-out;
+  }
+  
+  textarea:focus {
+    border-color: #1877f2;
+    box-shadow: 0 0 0 1px #1877f2;
+  }
+  
+  #postBtn:hover {
+    background-color: #165ecf;
+  }
+  
+  .card-post {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+  
